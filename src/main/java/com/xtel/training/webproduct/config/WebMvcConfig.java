@@ -18,7 +18,6 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
         StringHttpMessageConverter stringConverter = new StringHttpMessageConverter();
         stringConverter.setSupportedMediaTypes(Arrays.asList(new MediaType("text", "plain", UTF8)));
         converters.add(stringConverter);
-        // Add other converters ...
     }
     // Cấu hình để sử dụng các file nguồn tĩnh (html, image, ..)
     // Tương đương với <mvc:resources/> trong cấu hình sử dụng XML.

@@ -26,10 +26,8 @@ public class MyDBAuthenticationService implements UserDetailsService {
             throw new UsernameNotFoundException("User " //
                     + username + " was not found in the database");
         }
-        // EMPLOYEE,MANAGER,..
         String role = account.getUserRole();
         List<GrantedAuthority> grantList = new ArrayList<GrantedAuthority>();
-        // ROLE_EMPLOYEE, ROLE_MANAGER
         GrantedAuthority authority = new SimpleGrantedAuthority("ROLE_" + role);
         grantList.add(authority);
         boolean enabled = account.isActive();
